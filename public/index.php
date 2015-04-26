@@ -1,9 +1,16 @@
-<?php require_once("../includes/session.php"); ?>
-<?php require_once("../includes/db_connection.php"); ?>
-<?php require_once("../includes/functions.php"); ?>
+<?php 
 
-<?php $layout_context = "public"; ?>
-<?php include("../includes/layouts/header.php"); ?>
+  $layout_context = "public";
+  require_once("../global_config.php");
+  /*******************************
+   * require_file(directoryname,file.php)
+   ******************************/
+  require_once(SESSION_PATH);
+  require_once(FUNCTIONS_PATH); 
+
+?>
+
+<?php require_once(HEADER_PATH); ?>
 <?php find_selected_page(true); ?>
 
 <section>
@@ -60,4 +67,4 @@
   </div>
 </div> -->
 
-<?php include("../includes/layouts/footer.php"); ?>
+<?php require_once(FOOTER_PATH); ?>

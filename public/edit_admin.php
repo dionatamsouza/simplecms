@@ -1,7 +1,20 @@
-<?php require_once("../includes/session.php"); ?>
-<?php require_once("../includes/db_connection.php"); ?>
-<?php require_once("../includes/functions.php"); ?>
-<?php require_once("../includes/validation_functions.php"); ?>
+
+ <?php 
+
+ $layout_context = "admin";
+
+ require_once("../global_config.php"); 
+
+ require_once(SESSION_PATH);
+ require_once(FUNCTIONS_PATH);
+ require_once(VALIDATION_FUNCTIONS);
+
+ confirm_logged_in();
+ confirm_admin();
+
+
+?>
+
 <?php confirm_logged_in(); ?>
 <?php confirm_admin(); ?>
 
@@ -60,7 +73,7 @@ if (isset($_POST['submit'])) {
 ?>
 
 <?php $layout_context = "admin"; ?>
-<?php include("../includes/layouts/header.php"); ?>
+<?php require_once(HEADER_PATH); ?>
 
 <div id="main">
   <div id="navigation">
@@ -93,4 +106,4 @@ if (isset($_POST['submit'])) {
   </div>
 </div>
 
-<?php include("../includes/layouts/footer.php"); ?>
+<?php require_once(FOOTER_PATH); ?>

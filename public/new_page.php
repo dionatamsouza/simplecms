@@ -1,8 +1,12 @@
-<?php require_once("../includes/session.php"); ?>
-<?php require_once("../includes/db_connection.php"); ?>
-<?php require_once("../includes/functions.php"); ?>
-<?php require_once("../includes/validation_functions.php"); ?>
+
+<?php $layout_context = "admin"; ?>
+<?php require_once("../global_config.php"); ?>
+<?php require_once(SESSION_PATH); ?>
+<?php require_once(FUNCTIONS_PATH); ?>
+<?php require_once(VALIDATION_FUNCTIONS); ?>
 <?php confirm_logged_in(); ?>
+<?php confirm_admin(); ?>
+
 
 <?php find_selected_page(); ?>
 

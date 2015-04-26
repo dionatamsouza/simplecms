@@ -1,15 +1,21 @@
-<?php require_once("../includes/session.php"); ?>
-<?php require_once("../includes/db_connection.php"); ?>
-<?php require_once("../includes/functions.php"); ?>
-<?php confirm_logged_in(); ?>
-<?php confirm_admin(); ?>
+<?php 
 
-<?php
-  $admin_set = find_all_admins();
+ $layout_context = "admin";
+
+ require_once("../global_config.php"); 
+
+ require_once(SESSION_PATH);
+ require_once(FUNCTIONS_PATH);
+
+ confirm_logged_in(); 
+ confirm_admin();
+
 ?>
 
-<?php $layout_context = "admin"; ?>
-<?php include("../includes/layouts/admin/header.php"); ?>
+<?php $admin_set = find_all_admins(); ?>
+
+<?php require_once(HEADER_PATH); ?>
+
 <div id="main">
   <div id="navigation">
 		<br />
@@ -35,5 +41,5 @@
     <a href="new_admin.php">Add new admin</a>
   </div>
 </div>
-<?php include("../includes/layouts/admin/footer.php"); ?>
+<?php require_once(FOOTER_PATH); ?>
 

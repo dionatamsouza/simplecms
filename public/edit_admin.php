@@ -1,23 +1,10 @@
-
- <?php 
-
- $layout_context = "admin";
-
- require_once("../global_config.php"); 
-
- require_once(SESSION_PATH);
- require_once(FUNCTIONS_PATH);
- require_once(VALIDATION_FUNCTIONS);
-
- confirm_logged_in();
- confirm_admin();
-
-
-?>
-
+<?php $layout_context = "admin"; ?>
+<?php require_once("../global_config.php"); ?>
+<?php require_once(SESSION_PATH); ?>
+<?php require_once(FUNCTIONS_PATH); ?>
+<?php require_once(VALIDATION_FUNCTIONS); ?>
 <?php confirm_logged_in(); ?>
-<?php confirm_admin(); ?>
-
+<?php  confirm_admin(); ?>
 
 <?php
   $admin = find_admin_by_id($_GET["id"]);

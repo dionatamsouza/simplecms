@@ -108,11 +108,7 @@
 		$query .= "LIMIT 1";
 		$page_set = mysqli_query($connection, $query);
 		confirm_query($page_set);
-		if($page = mysqli_fetch_assoc($page_set)) {
-			return $page;
-		} else {
-			return null;
-		}
+		return ($page = mysqli_fetch_assoc($page_set))?$page:null;
 	}
 	
 	function find_admin_by_id($admin_id) {
@@ -126,11 +122,7 @@
 		$query .= "LIMIT 1";
 		$admin_set = mysqli_query($connection, $query);
 		confirm_query($admin_set);
-		if($admin = mysqli_fetch_assoc($admin_set)) {
-			return $admin;
-		} else {
-			return null;
-		}
+		return ($admin = mysqli_fetch_assoc($admin_set))?$admin:null; 
 	}
 
 	function has_admin_access($username){
@@ -326,21 +318,6 @@
 		}
 	}
 
-	// output for displaying site stuffs
-	function output($var){
-		if(isset($var) && !empty($var)){
-			echo $var;
-		}else{
-			echo "Undefined.Please define in configuration file";
-		}
-	}
-
-
-	function ifissetoutput($var){
-		if(isset($var)){
-			echo $var;
-		}
-	}
 
 	// checks if the user is admin
 	function is_admin(){

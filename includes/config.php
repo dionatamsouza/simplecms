@@ -1,8 +1,10 @@
 <?php
-	define("DB_SERVER", "localhost");
-	define("DB_USER", "superadmin");
-	define("DB_PASS", "superadmin");
-	define("DB_NAME", "simplecms");
+	define("DB_SERVER", "localhost"); // DATABASE HOST
+	define("DB_USER", "superadmin");  // DATABASE USERNAME
+	define("DB_PASS", "superadmin");  // DATABASE PASSWORD
+	define("DB_NAME", "simplecms");  // DATABASE NAME
+
+  define("SITENAME", "Simple CMS");
 
   // 1. Create a database connection
   $connection = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
@@ -13,4 +15,7 @@
          " (" . mysqli_connect_errno() . ")"
     );
   }
+
+
+
 ?>

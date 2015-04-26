@@ -4,7 +4,7 @@
 <?php require_once("../includes/validation_functions.php"); ?>
 <?php 
    // check if the user is logged in already
-    if(isset($_SESSION["username"])){
+    if(logged_in()){
       redirect_to("admin.php");
     }
  ?>

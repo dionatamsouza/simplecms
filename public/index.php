@@ -5,7 +5,6 @@
 <?php $layout_context = "public"; ?>
 <?php include("../includes/layouts/header.php"); ?>
 <?php find_selected_page(true); ?>
-<?php $all_images = get_all_img_url(); // get all the images and return an array ?>
 
 <section>
 <b style="text-align:center;">Browse the list</b>

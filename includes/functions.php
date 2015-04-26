@@ -299,13 +299,9 @@
 
 	function attempt_login($username, $password) {
 		$admin = find_admin_by_username($username);
-		if ($admin) {
-			// found admin, now check password if password match return admin if not match return false
-			return (password_check($password, $admin["hashed_password"]))?$admin:false;
-		} else {
-			// admin not found
-			return false;
-		}
+	    // see if found admin, now check password if password match return admin if not match return false.
+		return ($admin)?((password_check($password, $admin["hashed_password"]))?$admin:false):false;
+	
 	}
 
 	function logged_in() {

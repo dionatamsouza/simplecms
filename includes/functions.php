@@ -91,11 +91,7 @@
 		$query .= "LIMIT 1";
 		$subject_set = mysqli_query($connection, $query);
 		confirm_query($subject_set);
-		if($subject = mysqli_fetch_assoc($subject_set)) {
-			return $subject;
-		} else {
-			return null;
-		}
+		return ($subject = mysqli_fetch_assoc($subject_set))?$subject:null; 
 	}
 
 	function find_page_by_id($page_id, $public=true) {
@@ -150,12 +146,7 @@
 		$query .= "LIMIT 1";
 		$admin_set = mysqli_query($connection, $query);
 		confirm_query($admin_set);
-		if($admin = mysqli_fetch_assoc($admin_set)) {
-			return true;
-		} else {
-			return false;
-		}
-
+		return ($admin = mysqli_fetch_assoc($admin_set))?true:false; 
 	}
 
 	function find_admin_by_username($username) {
@@ -169,20 +160,12 @@
 		$query .= "LIMIT 1";
 		$admin_set = mysqli_query($connection, $query);
 		confirm_query($admin_set);
-		if($admin = mysqli_fetch_assoc($admin_set)) {
-			return $admin;
-		} else {
-			return null;
-		}
+		return ($admin = mysqli_fetch_assoc($admin_set))?$admin:null; 
 	}
 
 	function find_default_page_for_subject($subject_id) {
 		$page_set = find_pages_for_subject($subject_id);
-		if($first_page = mysqli_fetch_assoc($page_set)) {
-			return $first_page;
-		} else {
-			return null;
-		}
+		return ($first_page = mysqli_fetch_assoc($page_set))?$first_page:null; 
 	}
 	
 	function find_selected_page($public=false) {
@@ -319,24 +302,14 @@
 	function password_check($password, $existing_hash) {
 		// existing hash contains format and salt at start
 	  $hash = crypt($password, $existing_hash);
-	  if ($hash === $existing_hash) {
-	    return true;
-	  } else {
-	    return false;
-	  }
+	  return ($hash === $existing_hash)?true:false; 
 	}
 
 	function attempt_login($username, $password) {
 		$admin = find_admin_by_username($username);
 		if ($admin) {
-			// found admin, now check password
-			if (password_check($password, $admin["hashed_password"])) {
-				// password matches
-				return $admin;
-			} else {
-				// password does not match
-				return false;
-			}
+			// found admin, now check password if password match return admin if not match return false
+			return (password_check($password, $admin["hashed_password"]))?$admin:false;
 		} else {
 			// admin not found
 			return false;

@@ -1,10 +1,14 @@
-<?php require_once("../includes/session.php"); ?>
-<?php require_once("../includes/functions.php"); ?>
-<?php confirm_logged_in(); ?>
 
 <?php $layout_context = "admin"; ?>
+<?php require_once("../global_config.php"); ?>
+<?php require_once(SESSION_PATH); ?>
+<?php require_once(FUNCTIONS_PATH); ?>
+<?php require_once(VALIDATION_FUNCTIONS); ?>
+<?php confirm_logged_in(); ?>
+<?php confirm_admin(); ?>
+
 <!-- Grab admin header -->
-<?php include("../includes/layouts/admin/header.php"); ?>
+<?php include(HEADER_PATH); ?>
 
         <h1><p>Welcome to the admin area, <?php echo htmlentities($_SESSION["username"]); ?>.</p></h1>
         <p>Here you can do stuffz</p>

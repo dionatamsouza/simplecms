@@ -1,5 +1,9 @@
 <?php 
 
+
+// Set Default Language
+require_once("includes/lang/np.php");
+
 // Database connections stuffs
 define("DB_SERVER", "localhost"); // DATABASE HOST
 define("DB_USER", "superadmin");  // DATABASE USERNAME
@@ -24,6 +28,16 @@ define("SESSION_PATH", INC_DIR . SLASH . "session" . FILE_EXTENSION);
 define("HEADER_PATH", LAYOUT_DIR . SLASH . "header" . FILE_EXTENSION);
 define("FOOTER_PATH",  LAYOUT_DIR . SLASH . "footer" . FILE_EXTENSION);
 define("VALIDATION_FUNCTIONS", INC_DIR . SLASH . "validation_functions" . FILE_EXTENSION);
+
+//templating stuffs
+define("SMARTY_DIR_PATH", INC_DIR . "/smarty/libs/Smarty.class.php");
+require_once(SMARTY_DIR_PATH);
+$smarty = new Smarty;
+//$smarty->caching = false;
+//$smarty->cache_lifetime = 120;
+$smarty->cache_dir = INC_DIR . "/smarty/cache";
+$smarty->template_dir = INC_DIR . "/smarty/templates";
+$smarty->compile_dir = INC_DIR . "/smarty/templates_compile";
 
 /*Sites related stuffs*/
 // Appear on browser window

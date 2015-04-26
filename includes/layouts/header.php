@@ -1,5 +1,8 @@
-<?php require_once('../includes/functions.php') //relative to page that header file is included in ?>
-<?php require_once("config.php"); ?>
+
+<?php $layout_context = "admin"; ?>
+<?php require_once("../global_config.php"); ?>
+<?php require_once(FUNCTIONS_PATH); ?>
+
 <?php 
 	if (!isset($layout_context)) {
 		$layout_context = "public";

@@ -2,7 +2,7 @@
 <footer>
   <a href="<?php output($site_footer_twitter_link); ?>"><img src="images/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
   <a href="<?php output($site_footer_linkedin_link); ?>" target="_new"><img src="images/linkedin.png" alt="Linkedin Logo" class="social-icon"></a>
-  <p><b>&copy; <?php output($site_footer_copy_right_text); ?></b></p>
+  <p><b>&copy; copyright 2015</b></p>
 </footer>
 </div>
 </body>

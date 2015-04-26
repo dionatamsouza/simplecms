@@ -375,11 +375,7 @@
 	}
 
 	function confirm_admin(){
-		if(is_admin()){
-			return true;
-		}else{
-			redirect_to("no_permission.php");
-		}
+		return (is_admin())?true:redirect_to("no_permission.php");
 	}
 
 	//get the url of images

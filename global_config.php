@@ -4,6 +4,8 @@
 // Set Default Language
 require_once("includes/lang/np.php");
 
+define("SET_DEFAULT_LANG", "PathOfLang");
+
 // Database connections stuffs
 define("DB_SERVER", "localhost"); // DATABASE HOST
 define("DB_USER", "superadmin");  // DATABASE USERNAME
@@ -40,21 +42,15 @@ $smarty->template_dir = INC_DIR . "/smarty/templates";
 $smarty->compile_dir = INC_DIR . "/smarty/templates_compile";
 
 /*Sites related stuffs*/
-// Appear on browser window
-$site_browser_title = "SimpleCMS | YourName"; 
-
-// Appears on top header
-$site_header_title = "SimpleCMS";
-$site_secondary_header_title = "SimpleCMS";
-
-// Appears on individual page
-$site_page_title = "";
+define("SITE_TITLE", "SimpleCMS | YourName"); // Appear on browser window
+define("SITE_HEADER_TITLE", "SimpleCMS");
+define("SITE_HEADER_SECONDARY_TITLE", "SimpleCMS"); // Appears on top header
+define("SITE_PG_TITLE", "value"); // Appears on individual page
 
 // Appears on footer
-$site_footer_copy_right_text = "Copyright " . date('Y') . " SimpleCMS Inc. All Right Reserved";
-$site_footer_linkedin_link = "https://google.com";
-$site_footer_facebook_link = "";
-$site_footer_twitter_link = "";
-
+define("SITE_FOOTER_CP_RIGHT_TEXT", "Copyright " . date('Y') . " SimpleCMS Inc. All Right Reserved");
+define("SITE_FOOTER_LINKEDIN_URL", "");
+define("SITE_FOOTER_FB_URL", "link");
+define("SITE_FOOTER_TWITTER_URL", "link");
 
 ?>

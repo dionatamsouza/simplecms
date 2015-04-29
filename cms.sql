@@ -16,7 +16,7 @@ CREATE TABLE `admins` (
 -- Dumping data for table `admins`
 --
 
-INSERT INTO `admins` VALUES (1,'kskoglund','$2y$10$NmZiNzcxMzhiY2E0NTg2YO9X4eeRSo03H6r0A5bqHkZnF1hI8sLX.'),(3,'johndoe','$2y$10$NTdmODYxZWQ0OGMwYmMxZ.Q3I4i0FtO/X9DWv1tpsF5hiS9LBXqmu');
+INSERT INTO `admins` VALUES (1,'admin','$2y$10$NmZiNzcxMzhiY2E0NTg2YO9X4eeRSo03H6r0A5bqHkZnF1hI8sLX.'),(3,'admin2','$2y$10$NTdmODYxZWQ0OGMwYmMxZ.Q3I4i0FtO/X9DWv1tpsF5hiS9LBXqmu');
 
 --
 -- Table structure for table `pages`
